@@ -1,0 +1,55 @@
+#if !defined(SYNTAX_CSQ)
+#define SYNTAX_CSQ
+
+//All C++ Derived Libraries
+#include <iostream>
+#include <typeinfo>
+#include <filesystem>
+#include <sstream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+//Syntax defs
+
+    #define def auto
+    #define lam =[]
+    #define func(name,args,code) def name lam args {code}
+
+    #define var auto
+    #define let var
+
+    #define _start_ {
+    #define endhere }
+    #define block(code) (code);
+
+    #define when if(
+    #define elif else if(
+    #define _if_ when
+    #define so )
+    #define then ){
+
+    #define forR(i,from,condition,steps) for(int i=from;condition;i=i+steps){
+    #define forAR(i,from,condition,steps) for(int i=from;condition;i=i-steps){
+    #define forE(_var_,data) for(var &_var_:data)
+    #define _for_ for(
+
+    //Syntax releted to oops
+    #define constructor(classname) classname
+    #define _end_ }
+    #define __Cons__(classname) classname
+    #define __init__(classname) classname
+    #define inherit(classname) classname
+    // #define of(classname,member) classname::method
+
+    //More special functions and keywords
+    #define as(from,to) typedef from to
+    #define none \0
+
+    #define vect(type,var_) vector<type> var_
+
+    //type this will allow us to find the type of a variable
+    #define Type(var) typeid(var).name()
+
+
+#endif // SYNTAX_CSQ
