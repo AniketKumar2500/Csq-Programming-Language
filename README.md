@@ -7,7 +7,8 @@ This is a programming language which is similar to C++ and C but its the next le
 * Easy Syntax
 * Fast Runtime
 * Having Libraries which can provide various supports
-* Platform independent  (This is still in development because for testing windows and linux is only present currently)
+* Platform independent  (Executable haven't yet created for mac)
+
 
 # Specialties
 
@@ -15,6 +16,10 @@ This is a programming language which is similar to C++ and C but its the next le
 * Support dynamic typing by using var and def keyword for functions
 * Allows to use C++ in Csq code
 
+# Installation
+
+* To install csq for linux you can download the directory LinuxSetup
+* To install csq for windows you can download the directory WindowsSetup
 
 # Simple Keywords
     def ->Used to define a function in which you don't have to put return type
@@ -71,7 +76,7 @@ endmain
 >endmain
   
 ## Builtins Modules
-* numcq.csq is a module which can be used in datascience and the simple use of array.
+* numcq.csq is a module which can be used in datascience and the simple and advance uses of array.
 * builtins.csq is the core module which allows the basic and advance operations to performed.
 * syntax.csq is the syntax module which is linked to compiler.
 * Regex.csq is a module which can do operations releted to Regular expression.
