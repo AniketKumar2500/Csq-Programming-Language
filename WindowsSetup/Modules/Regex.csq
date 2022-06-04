@@ -1,0 +1,83 @@
+#ifndef REGEX_CSQ
+#define REGEX_CSQ
+
+
+    #include "builtins.csq"
+
+    //This function will split strings and will return the vector
+    def split (str strArg, char seperator)  
+    {  
+        str *d=new str[10000];
+        vect(str,d2);
+        int currIndex = 0, i = 0;  
+        int startIndex = 0, endIndex = 0;  
+        while (i <= strArg.String.length())  
+        {  
+            if (strArg.String[i] == seperator || i == strArg.len())  
+            {  
+                endIndex = i;  
+                str subStr = "";  
+                subStr.String.append(strArg.String, startIndex, endIndex - startIndex);  
+                d2.push_back(subStr.String) ;
+                currIndex += 1;  
+                startIndex = endIndex + 1;  
+            }  
+            i++;  
+        }     
+        return d2;
+    }   
+    //This function will return the number of occurence of the substr in data
+    def findall(str subStr,str mainStr)
+    {
+        int c=0;
+        vect(str,data_F)=split(mainStr,' ');
+        forE(i,data_F)
+        {
+            when i.String==subStr.String then
+                c++;
+            endhere
+        }
+        return c;
+    }
+
+
+    //This function will search and return the first index position of substring occurence
+    def search(str subStr,vect(str,data))
+    {
+        int index = 0;
+        forR(i,0,i<data.size(),1)
+            when data.at(i).String==subStr.String so
+            {
+                index=i;
+                break;
+            }
+        endhere
+        return index;
+    }
+
+    //This function will search all the occurence of the subStr and return the vector of indexex of occurence
+    def searchIndex(str subStr,vect(str,data))
+    {
+        vect(int,ret);
+        forR(i,0,i<data.size(),1)
+            when data.at(i).String==subStr.String so
+            {
+                ret.push_back(i);
+            }
+        endhere
+        return ret;
+    }
+
+    //This will replace the char of the string
+    def replaceStr(char old,char newstr,str mainstr)
+    {
+        forR(i,0,i<mainstr.len(),1)
+            when mainstr.String[i]==old so
+            {
+                mainstr.String[i]=newstr;
+            }
+        endhere
+        return mainstr;
+    }
+
+#endif // BUILTINS_CSQ
